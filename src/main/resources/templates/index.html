@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+             function asyncCall(){
+            fetch("/4",
+                // {
+                //     method : "GET",
+                //     headers : {
+                //         "Content-Type": "application/json",
+                //     },
+                // }
+                )
+                .then(response => {
+                    console.log("response.body = " , response.body);
+                    console.log("response.text() = " , response.text());
+                    // console.log("response.text() = " , response.text()[Symbol.toStringTag]);
+                    console.log("response = " , response);
+                    // response.json().then(function(data){
+                        // console.log("text 안에 데이터 = " + data);
+                        // for(const prop in data) {
+                        //     document.querySelector("#asyncCall").append(data[prop].userId);
+                        //     document.querySelector("#asyncCall").append(document.createElement('br'));
+                        // }
+                    // })
+                })
+                .catch((error) => console.log("error:", error));
+        }
+
+    </script>
+</head>
+<body>
+<form action="#">
+    <p><input type="button" onclick="asyncCall()" value="Photos" />
+</form>
+<div id="asyncCall"></div>
+</body>
+</html>
